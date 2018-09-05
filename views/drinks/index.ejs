@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>List of drinks</title>
+</head>
+<body>
+
+<h1>List of drinks</h1>
+
+<ul>
+  <% drinks.forEach(function(drink) { %>
+    <li>
+      <%= drink.id %> - <%= drink.name %> - <%= drink.price %>
+      <a href="/drinks/<%= drink.id %>/edit">Edit</a>
+
+      <form method="POST" action="/drinks/<%= drink.id %>/delete"><button type="submit">Delete</button></form>
+    </li>
+  <% }) %>
+</ul>
+
+<a href="/drinks/new">Add drinks</a>
+
+</body>
+</html>
